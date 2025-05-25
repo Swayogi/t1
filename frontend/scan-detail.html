@@ -25,39 +25,93 @@
     </nav>
 
     <main class="container mt-5">
-        <h1>Scan Detail</h1>
+        <h1 id="scanDetailTitle">Scan Detail</h1> <!-- Added id -->
+        <div id="message" class="mb-3"></div> <!-- Added message div -->
         <div class="card mt-4">
             <div class="card-header">
-                <h5 class="card-title" id="scanUrl">URL: <span>[URL_PLACEHOLDER]</span></h5>
+                <h5 class="card-title">URL: <span id="scanUrlOriginal">[URL_PLACEHOLDER]</span></h5> <!-- Changed id of span -->
             </div>
             <div class="card-body">
                 <p><strong>Scan Date:</strong> <span id="scanDate">[SCAN_DATE_PLACEHOLDER]</span></p>
-                <p><strong>Overall Malicious Status:</strong> <span id="overallStatus" class="fw-bold">[STATUS_PLACEHOLDER]</span></p>
-
+                <p><strong>Overall Malicious Status:</strong> <span id="overallMaliciousStatus" class="fw-bold">[STATUS_PLACEHOLDER]</span></p> <!-- Changed id -->
                 <hr>
-                <h3>VirusTotal Results</h3>
-                <div id="virusTotalResults">
-                    <p>Status: <span id="vtStatus">[VT_STATUS_PLACEHOLDER]</span></p>
-                    <p>Details: <a href="#" id="vtLink" target="_blank">View Full Report</a></p>
-                    <pre><code id="vtRawData">[VT_RAW_DATA_PLACEHOLDER]</code></pre>
+
+                <!-- Network Information Section -->
+                <div class="card mt-3">
+                    <div class="card-header">Network Information</div>
+                    <div class="card-body">
+                        <p><strong>IP Address:</strong> <span id="scanIpAddress">N/A</span></p>
+                        <p><strong>Final URL:</strong> <span id="scanFinalUrl">N/A</span></p>
+                        <p><strong>HTTP Status Code:</strong> <span id="scanHttpStatusCode">N/A</span></p>
+                        <div id="scanNetworkError" class="text-danger"></div>
+                    </div>
                 </div>
 
-                <hr>
-                <h3>Google Safe Browsing Results</h3>
-                <div id="googleSafeBrowsingResults">
-                     <p>Status: <span id="gsbStatus">[GSB_STATUS_PLACEHOLDER]</span></p>
-                     <pre><code id="gsbRawData">[GSB_RAW_DATA_PLACEHOLDER]</code></pre>
+                <!-- WHOIS Information Section -->
+                <div class="card mt-3">
+                    <div class="card-header">WHOIS Information</div>
+                    <div class="card-body">
+                        <p><strong>Registrar:</strong> <span id="whoisRegistrar">N/A</span></p>
+                        <p><strong>Creation Date:</strong> <span id="whoisCreationDate">N/A</span></p>
+                        <p><strong>Updated Date:</strong> <span id="whoisUpdatedDate">N/A</span></p>
+                        <p><strong>Expiration Date:</strong> <span id="whoisExpirationDate">N/A</span></p>
+                        <p><strong>Name Servers:</strong></p>
+                        <ul id="whoisNameServers" class="list-unstyled ps-3"><li>N/A</li></ul>
+                        <div id="whoisError" class="text-danger"></div>
+                    </div>
                 </div>
 
-                <hr>
-                <h3>ML Model Results</h3>
-                <div id="mlModelResults">
-                    <p>Prediction: <span id="mlPrediction">[ML_PREDICTION_PLACEHOLDER]</span></p>
-                    <p>Confidence: <span id="mlConfidence">[ML_CONFIDENCE_PLACEHOLDER]</span></p>
+                <!-- SSL Certificate Information Section -->
+                <div class="card mt-3">
+                    <div class="card-header">SSL Certificate Information</div>
+                    <div class="card-body">
+                        <p><strong>Is HTTPS:</strong> <span id="sslIsHttps">N/A</span></p>
+                        <p><strong>Is Valid:</strong> <span id="sslIsValid">N/A</span></p>
+                        <p><strong>Issuer:</strong> <span id="sslIssuer">N/A</span></p>
+                        <p><strong>Valid From:</strong> <span id="sslValidFrom">N/A</span></p>
+                        <p><strong>Valid To:</strong> <span id="sslValidTo">N/A</span></p>
+                        <p><strong>Days Remaining:</strong> <span id="sslDaysRemaining">N/A</span></p>
+                        <div id="sslError" class="text-danger"></div>
+                    </div>
+                </div>
+                
+                <!-- VirusTotal Results Section -->
+                <div class="card mt-3">
+                    <div class="card-header">VirusTotal Results</div>
+                    <div class="card-body">
+                        <p><strong>Malicious:</strong> <span id="vtMalicious">N/A</span></p>
+                        <p><strong>Suspicious:</strong> <span id="vtSuspicious">N/A</span></p>
+                        <p><strong>Harmless:</strong> <span id="vtHarmless">N/A</span></p>
+                        <p><strong>Undetected:</strong> <span id="vtUndetected">N/A</span></p>
+                        <p>Details: <a id="vtReportLink" href="#" target="_blank" style="display:none;">View Full Report on VirusTotal</a></p>
+                        <div id="vtError" class="text-danger"></div>
+                    </div>
+                </div>
+
+                <!-- Google Safe Browsing Results Section -->
+                <div class="card mt-3">
+                    <div class="card-header">Google Safe Browsing Results</div>
+                    <div class="card-body">
+                         <p><strong>Is Malicious:</strong> <span id="gsbIsMalicious">N/A</span></p>
+                         <p><strong>Threat Types:</strong></p>
+                         <ul id="gsbThreatTypes" class="list-unstyled ps-3"><li>N/A</li></ul>
+                         <div id="gsbError" class="text-danger"></div>
+                    </div>
+                </div>
+
+                <!-- ML Model Results Section -->
+                <div class="card mt-3">
+                    <div class="card-header">ML Model Results</div>
+                    <div class="card-body">
+                        <p><strong>Is Phishing Prediction:</strong> <span id="mlIsPhishing">N/A</span></p>
+                        <p><strong>Confidence:</strong> <span id="mlConfidence">N/A</span></p>
+                        <div id="mlError" class="text-danger"></div>
+                    </div>
                 </div>
             </div>
-            <div class="card-footer">
+            <div class="card-footer text-center"> <!-- Centered footer content -->
                 <a href="scan-history.html" class="btn btn-secondary">Back to Scan History</a>
+                <a href="scanner.html" class="btn btn-primary ms-2">Scan Another URL</a>
             </div>
         </div>
     </main>
@@ -69,5 +123,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script src="js/apiService.js"></script>
+    <script src="js/scanDetail.js" defer></script>
 </body>
 </html>

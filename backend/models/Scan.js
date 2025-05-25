@@ -11,10 +11,40 @@ const ScanSchema = new mongoose.Schema({
     required: true,
   },
   results: { // Store the combined results from APIs and ML model
+    // Existing fields
     virusTotal: Object,
     googleSafeBrowsing: Object,
     mlModel: Object,
-    isMalicious: Boolean, // Overall malicious status
+    
+    // New fields for network and domain details
+    networkInfo: {
+      ipAddress: String,
+      finalUrl: String,
+      httpStatusCode: Number,
+      error: String, // To store any errors during network info gathering
+    },
+    whoisInfo: {
+      registrar: String,
+      creationDate: String, // Or Date, consider consistency
+      updatedDate: String,  // Or Date
+      expirationDate: String, // Or Date
+      nameServers: [String],
+      error: String, // To store any errors during WHOIS lookup
+      // raw: Object, // Optionally store raw WHOIS data if needed, can be large
+    },
+    sslCertificateInfo: {
+      isValid: Boolean,
+      daysRemaining: Number,
+      validFrom: String, // Or Date
+      validTo: String,   // Or Date
+      issuer: String,
+      error: String, // To store any errors during SSL check
+      isHttps: Boolean, // To indicate if SSL check was applicable
+      // rawCertificate: Object, // Optional
+    },
+    
+    // Existing overall status
+    isMalicious: Boolean, // Overall malicious status based on all sources
   },
   scannedAt: {
     type: Date,
