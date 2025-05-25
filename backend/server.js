@@ -1,3 +1,4 @@
+require('dotenv').config(); // Loads .env file contents into process.env
 const express = require('express');
 const connectDB = require('./config/db'); // Import DB connection
 const app = express();
@@ -17,6 +18,10 @@ app.get('/', (req, res) => {
 
 // Connect to MongoDB
 connectDB();
+
+// Centralized Error Handler - Must be last app.use() call before app.listen()
+const errorHandlerMiddleware = require('./middleware/errorHandlerMiddleware');
+app.use(errorHandlerMiddleware);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

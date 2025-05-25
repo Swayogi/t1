@@ -45,7 +45,7 @@ exports.registerUser = async (req, res) => {
     // Replace 'yourJwtSecret' with an actual secret, preferably from environment variables
     jwt.sign(
       payload,
-      'yourJwtSecret', // THIS SHOULD BE IN AN ENVIRONMENT VARIABLE
+      process.env.JWT_SECRET || 'yourJwtSecret', // Fallback for safety
       { expiresIn: 3600 }, // Expires in 1 hour (3600 seconds)
       (err, token) => {
         if (err) throw err;
@@ -86,7 +86,7 @@ exports.loginUser = async (req, res) => {
 
     jwt.sign(
       payload,
-      'yourJwtSecret', // THIS SHOULD BE IN AN ENVIRONMENT VARIABLE
+      process.env.JWT_SECRET || 'yourJwtSecret', // Fallback for safety
       { expiresIn: 3600 }, // Expires in 1 hour
       (err, token) => {
         if (err) throw err;
