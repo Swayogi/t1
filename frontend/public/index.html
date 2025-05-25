@@ -9,18 +9,18 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">PhishNet</a>
+            <a class="navbar-brand" href="/">PhishNet</a> <!-- Changed -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li> <!-- Active state for current page -->
-                    <li class="nav-item"><a class="nav-link" href="scanner.html">URL Scanner</a></li>
-                    <li class="nav-item"><a class="nav-link" href="education/phishing-basics.html">Phishing Info</a></li> <!-- Link to education -->
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li> <!-- Changed -->
+                    <li class="nav-item"><a class="nav-link" href="/user/scanner.html">URL Scanner</a></li> <!-- Changed -->
+                    <li class="nav-item"><a class="nav-link" href="/education/phishing-basics.html">Phishing Info</a></li> <!-- Changed -->
+                    <li class="nav-item"><a class="nav-link" href="/public/contact.html">Contact</a></li> <!-- Changed -->
+                    <li class="nav-item"><a class="nav-link" href="/auth/login.html">Login</a></li> <!-- Changed -->
+                    <li class="nav-item"><a class="nav-link" href="/auth/register.html">Register</a></li> <!-- Changed -->
                 </ul>
             </div>
         </div>
@@ -31,8 +31,8 @@
             <div class="container-fluid py-5">
                 <h1 class="display-5 fw-bold">Welcome to PhishNet</h1>
                 <p class="col-md-8 fs-4">Your trusted partner in identifying and reporting phishing URLs. Protect yourself and the community from online threats.</p>
-                <a class="btn btn-primary btn-lg" href="register.html" role="button">Get Started</a>
-                <a class="btn btn-outline-secondary btn-lg" href="scanner.html" role="button">Scan a URL</a>
+                <a class="btn btn-primary btn-lg" href="/auth/register.html" role="button">Get Started</a> <!-- Changed -->
+                <a class="btn btn-outline-secondary btn-lg" href="/user/scanner.html" role="button">Scan a URL</a> <!-- Changed -->
             </div>
         </div>
 
@@ -54,7 +54,7 @@
 
     <footer class="footer mt-auto py-3 bg-light">
         <div class="container text-center">
-            <span class="text-muted">© 2023 PhishNet. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></span>
+            <span class="text-muted">© 2023 PhishNet. All rights reserved. | <a href="/public/privacy.html">Privacy Policy</a> | <a href="/public/terms.html">Terms of Service</a></span> <!-- Changed -->
         </div>
     </footer>
 

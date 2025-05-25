@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!token) {
     // No token found, redirect to login page
     alert('You are not logged in. Redirecting to login page...'); // Optional alert
-    window.location.href = 'login.html';
+    window.location.href = '/auth/login.html'; // Changed path
   } else {
     // Token exists, user is presumably logged in.
     // Future TODO: Optionally, you could verify the token with a backend endpoint here
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //     if (error.response && error.response.status === 401) {
 //         window.apiService.removeToken(); // Remove invalid token
 //         alert('Your session has expired. Please login again.');
-//         window.location.href = 'login.html';
+//         window.location.href = '/auth/login.html'; // Changed path
 //     }
 //   }
 // }

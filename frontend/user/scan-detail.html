@@ -9,15 +9,15 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">PhishNet</a>
+            <a class="navbar-brand" href="/public/index.html">PhishNet</a> <!-- Changed -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                  <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="scanner.html">New Scan</a></li>
-                    <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/user/dashboard.html">Dashboard</a></li> <!-- Changed -->
+                    <li class="nav-item"><a class="nav-link" href="/user/scanner.html">New Scan</a></li> <!-- Changed -->
+                    <li class="nav-item"><a class="nav-link" href="/user/profile.html">Profile</a></li> <!-- Changed -->
                     <li class="nav-item"><a class="nav-link" href="#">Logout</a></li>
                 </ul>
             </div>
@@ -110,20 +110,20 @@
                 </div>
             </div>
             <div class="card-footer text-center"> <!-- Centered footer content -->
-                <a href="scan-history.html" class="btn btn-secondary">Back to Scan History</a>
-                <a href="scanner.html" class="btn btn-primary ms-2">Scan Another URL</a>
+                <a href="/user/scan-history.html" class="btn btn-secondary">Back to Scan History</a> <!-- Changed -->
+                <a href="/user/scanner.html" class="btn btn-primary ms-2">Scan Another URL</a> <!-- Changed -->
             </div>
         </div>
     </main>
 
     <footer class="footer mt-auto py-3 bg-light">
         <div class="container text-center">
-            <span class="text-muted">© 2023 PhishNet. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></span>
+            <span class="text-muted">© 2023 PhishNet. All rights reserved. | <a href="/public/privacy.html">Privacy Policy</a> | <a href="/public/terms.html">Terms of Service</a></span> <!-- Changed -->
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-    <script src="js/apiService.js"></script>
-    <script src="js/scanDetail.js" defer></script>
+    <script src="../js/apiService.js"></script> <!-- Changed -->
+    <script src="../js/scanDetail.js" defer></script> <!-- Changed -->
 </body>
 </html>

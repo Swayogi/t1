@@ -15,14 +15,14 @@
             </button>
             <div class="collapse navbar-collapse" id="adminNavbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="admin_dashboard.html">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="admin_users.html">User Management</a></li>
-                    <li class="nav-item"><a class="nav-link" href="admin_reports.html">Report Management</a></li>
-                    <li class="nav-item"><a class="nav-link" href="admin_blacklist.html">Blacklist</a></li>
-                    <li class="nav-item"><a class="nav-link" href="admin_apikeys.html">API Keys</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/admin/admin_dashboard.html">Dashboard</a></li> <!-- Changed -->
+                    <li class="nav-item"><a class="nav-link" href="/admin/admin_users.html">User Management</a></li> <!-- Changed -->
+                    <li class="nav-item"><a class="nav-link" href="/admin/admin_reports.html">Report Management</a></li> <!-- Changed -->
+                    <li class="nav-item"><a class="nav-link" href="/admin/admin_blacklist.html">Blacklist</a></li> <!-- Changed -->
+                    <li class="nav-item"><a class="nav-link" href="/admin/admin_apikeys.html">API Keys</a></li> <!-- Changed -->
                 </ul>
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">View Main Site</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/public/index.html">View Main Site</a></li> <!-- Changed -->
                     <li class="nav-item"><a class="nav-link" href="#" id="adminLogoutLink">Logout (Admin)</a> <!-- JS needed for logout --></li>
                 </ul>
             </div>
@@ -37,7 +37,7 @@
                     <div class="card-header">Total Users</div>
                     <div class="card-body">
                         <h5 class="card-title" id="totalUsersStat">[COUNT]</h5>
-                        <a href="admin_users.html" class="btn btn-outline-light btn-sm">Manage Users</a>
+                        <a href="/admin/admin_users.html" class="btn btn-outline-light btn-sm">Manage Users</a> <!-- Changed -->
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                     <div class="card-header">Pending Reports</div>
                     <div class="card-body">
                         <h5 class="card-title" id="pendingReportsStat">[COUNT]</h5>
-                        <a href="admin_reports.html" class="btn btn-outline-light btn-sm">Manage Reports</a>
+                        <a href="/admin/admin_reports.html" class="btn btn-outline-light btn-sm">Manage Reports</a> <!-- Changed -->
                     </div>
                 </div>
             </div>
@@ -63,8 +63,8 @@
 
         <div class="mt-4">
             <h2>Quick Actions</h2>
-            <a href="admin_blacklist.html" class="btn btn-danger">Manage Blacklist</a>
-            <a href="admin_apikeys.html" class="btn btn-secondary">Configure API Keys</a>
+            <a href="/admin/admin_blacklist.html" class="btn btn-danger">Manage Blacklist</a> <!-- Changed -->
+            <a href="/admin/admin_apikeys.html" class="btn btn-secondary">Configure API Keys</a> <!-- Changed -->
         </div>
     </main>
 

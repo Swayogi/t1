@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         messageDiv.className = 'alert alert-success';
                     }
                     setTimeout(() => {
-                        window.location.href = 'dashboard.html';
+                        window.location.href = '/user/dashboard.html'; // Changed path
                     }, 1000); 
                 } else {
                     throw new Error('Login successful, but no token received.');
