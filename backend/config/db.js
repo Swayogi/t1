@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // Replace with your actual MongoDB connection string (e.g., from environment variables)
-const MONGO_URI = 'mongodb://localhost:27017/phishnet'; 
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/phishnet'; 
 
 const connectDB = async () => {
   try {

@@ -3,9 +3,9 @@
 
 module.exports = {
   virusTotal: {
-    apiKey: 'YOUR_VIRUSTOTAL_API_KEY_PLACEHOLDER',
+    apiKey: process.env.VIRUSTOTAL_API_KEY || 'YOUR_VIRUSTOTAL_API_KEY_PLACEHOLDER',
   },
   googleSafeBrowsing: {
-    apiKey: 'YOUR_GOOGLE_SAFE_BROWSING_API_KEY_PLACEHOLDER',
+    apiKey: process.env.GOOGLE_SAFE_BROWSING_API_KEY || 'YOUR_GOOGLE_SAFE_BROWSING_API_KEY_PLACEHOLDER',
   },
 };

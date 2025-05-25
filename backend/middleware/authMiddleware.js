@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/User'); 
-// JWT_SECRET should be in an environment variable
-const JWT_SECRET = process.env.JWT_SECRET || 'yourJwtSecret'; 
+// JWT_SECRET should be in an environment variable and is loaded by dotenv
+const JWT_SECRET = process.env.JWT_SECRET || 'yourJwtSecret'; // Fallback for safety
 
 module.exports = async function(req, res, next) {
   // Get token from header (e.g., 'x-auth-token' or 'Authorization: Bearer TOKEN')
