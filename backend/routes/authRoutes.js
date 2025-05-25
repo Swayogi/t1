@@ -10,7 +10,6 @@ const validationMiddleware = require('../middleware/validationMiddleware');
 router.post(
   '/register',
   [
-    check('username', 'Username is required and must be at least 3 characters long').not().isEmpty().trim().isLength({ min: 3 }),
     check('email', 'Please include a valid email').isEmail().normalizeEmail(),
     check('password', 'Password is required and must be at least 6 characters long').isLength({ min: 6 }),
     // You could add a custom validator for password confirmation if 'confirmPassword' is sent in body:

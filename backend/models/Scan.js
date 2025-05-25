@@ -21,6 +21,16 @@ const ScanSchema = new mongoose.Schema({
       ipAddress: String,
       finalUrl: String,
       httpStatusCode: Number,
+      geolocation: { // Add this
+        country: String,
+        region: String,
+        city: String,
+        error: String,
+      },
+      hostingProvider: { // Add this
+        name: String,
+        error: String,
+      },
       error: String, // To store any errors during network info gathering
     },
     whoisInfo: {
@@ -45,11 +55,13 @@ const ScanSchema = new mongoose.Schema({
     
     // Existing overall status
     isMalicious: Boolean, // Overall malicious status based on all sources
+    screenshotPath: String, // Add this
   },
-  scannedAt: {
-    type: Date,
-    default: Date.now,
+  status: {
+    type: String,
+    enum: ['pending', 'processing', 'completed', 'failed'],
+    default: 'pending',
   },
-});
+}, { timestamps: true });
 
 module.exports = mongoose.model('Scan', ScanSchema);

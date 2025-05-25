@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 // @route   POST /api/auth/register
 // @access  Public
 exports.registerUser = async (req, res) => {
-  const { username, email, password } = req.body;
+  const { email, password } = req.body;
 
   try {
     // Check if user already exists
@@ -15,29 +15,20 @@ exports.registerUser = async (req, res) => {
       return res.status(400).json({ msg: 'User already exists' });
     }
 
-    user = await User.findOne({ username });
-    if (user) {
-      return res.status(400).json({ msg: 'Username already taken' });
-    }
-
     // Create new user instance
     user = new User({
-      username,
       email,
       password,
     });
 
-    // Hash password
-    const salt = await bcrypt.genSalt(10);
-    user.password = await bcrypt.hash(password, salt);
-
-    // Save user to database
+    // Save user to database (password hashing is handled by pre-save hook in User model)
     await user.save();
 
     // Create and return JWT (payload, secret, options)
     const payload = {
       user: {
         id: user.id, // Mongoose uses 'id' as a virtual getter for '_id'
+        role: user.role, // Add role
       },
     };
 
@@ -49,7 +40,14 @@ exports.registerUser = async (req, res) => {
       { expiresIn: 3600 }, // Expires in 1 hour (3600 seconds)
       (err, token) => {
         if (err) throw err;
-        res.json({ token });
+        res.json({
+          token,
+          user: {
+            id: user.id,
+            email: user.email,
+            role: user.role,
+          },
+        });
       }
     );
   } catch (err) {
@@ -71,8 +69,8 @@ exports.loginUser = async (req, res) => {
       return res.status(400).json({ msg: 'Invalid credentials' });
     }
 
-    // Validate password
-    const isMatch = await bcrypt.compare(password, user.password);
+    // Validate password using the matchPassword method from User model
+    const isMatch = await user.matchPassword(password);
     if (!isMatch) {
       return res.status(400).json({ msg: 'Invalid credentials' }); // Use a generic message for security
     }
@@ -81,6 +79,7 @@ exports.loginUser = async (req, res) => {
     const payload = {
       user: {
         id: user.id,
+        role: user.role, // Add role
       },
     };
 
@@ -90,7 +89,14 @@ exports.loginUser = async (req, res) => {
       { expiresIn: 3600 }, // Expires in 1 hour
       (err, token) => {
         if (err) throw err;
-        res.json({ token });
+        res.json({
+          token,
+          user: {
+            id: user.id,
+            email: user.email,
+            role: user.role,
+          },
+        });
       }
     );
   } catch (err) {
