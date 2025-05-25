@@ -30,17 +30,19 @@
     </nav>
 
     <main class="container mt-5">
-        <h1>URL Scanner</h1>
-        <form>
+        <h1>Scan a URL for Threats</h1> <!-- Changed -->
+        <p class="lead">Enter any URL below to check it against multiple threat intelligence sources, including VirusTotal, Google Safe Browsing, and our own AI-powered phishing detection model.</p> <!-- Added -->
+        <form id="scanUrlForm"> <!-- Added an ID to the form -->
             <div class="mb-3">
                 <label for="urlToScan" class="form-label">Enter URL to scan:</label>
-                <input type="url" class="form-control" id="urlToScan" required>
+                <input type="url" class="form-control" id="urlToScan" placeholder="Enter URL to scan (e.g., http://example.com)" required> <!-- Added placeholder -->
             </div>
             <button type="submit" class="btn btn-primary mt-2">Scan URL</button>
         </form>
         <div id="scanResults" class="mt-4">
             <h2>Scan Results</h2>
-            <p>Results will appear here.</p>
+            <p id="scanResultsSummary">Scan results will be summarized below. Click 'Scan URL' to begin.</p> <!-- Changed and added ID -->
+            <p id="scanDetailLinkPlaceholder" style="display:none;">For full details, view the <a href='#' id='scanDetailLink'>detailed scan report</a>.</p> <!-- Added -->
         </div>
     </main>
 

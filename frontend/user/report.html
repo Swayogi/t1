@@ -30,15 +30,16 @@
     </nav>
 
     <main class="container mt-5">
-        <h1>Report a Phishing URL</h1>
-        <form>
+        <h1>Report a Suspicious URL</h1> <!-- Changed -->
+        <p class="lead">Help us fight phishing! If you've encountered a suspicious URL, please submit it below. Your report will be reviewed by our team and contributes to making the web safer.</p> <!-- Added -->
+        <form id="reportUrlForm"> <!-- Added an ID to the form -->
             <div class="mb-3">
                 <label for="reportedUrl" class="form-label">Suspicious URL:</label>
-                <input type="url" class="form-control" id="reportedUrl" required>
+                <input type="url" class="form-control" id="reportedUrl" placeholder="http://suspicious-site.com/phishing-attempt" required> <!-- Added placeholder -->
             </div>
             <div class="mb-3">
                 <label for="reportDescription" class="form-label">Description (optional):</label>
-                <textarea class="form-control" id="reportDescription" rows="3"></textarea>
+                <textarea class="form-control" id="reportDescription" rows="3" placeholder="Describe why you think this URL is suspicious (e.g., fake login page, requests sensitive information, etc.)."></textarea> <!-- Added placeholder -->
             </div>
             <button type="submit" class="btn btn-danger mt-2">Submit Report</button>
         </form>

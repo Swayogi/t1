@@ -30,29 +30,29 @@
     </nav>
 
     <main class="container mt-5">
-        <h1>Admin Dashboard</h1>
+        <h1>PhishNet Security Command Center</h1> <!-- Changed -->
         <div class="row mt-4">
             <div class="col-md-4">
                 <div class="card text-white bg-primary mb-3">
-                    <div class="card-header">Total Users</div>
+                    <div class="card-header">Registered Operators</div> <!-- Changed -->
                     <div class="card-body">
                         <h5 class="card-title" id="totalUsersStat">[COUNT]</h5>
-                        <a href="/admin/admin_users.html" class="btn btn-outline-light btn-sm">Manage Users</a> <!-- Changed -->
+                        <a href="/admin/admin_users.html" class="btn btn-outline-light btn-sm">Manage Users</a> 
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card text-white bg-warning mb-3">
-                    <div class="card-header">Pending Reports</div>
+                    <div class="card-header">Threat Reports Pending Review</div> <!-- Changed -->
                     <div class="card-body">
                         <h5 class="card-title" id="pendingReportsStat">[COUNT]</h5>
-                        <a href="/admin/admin_reports.html" class="btn btn-outline-light btn-sm">Manage Reports</a> <!-- Changed -->
+                        <a href="/admin/admin_reports.html" class="btn btn-outline-light btn-sm">Manage Reports</a> 
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card text-white bg-info mb-3">
-                    <div class="card-header">Total Scans Today</div>
+                    <div class="card-header">URLs Analyzed Today</div> <!-- Changed -->
                     <div class="card-body">
                         <h5 class="card-title" id="totalScansStat">[COUNT]</h5>
                         <p class="card-text">Details coming soon.</p>
@@ -63,8 +63,8 @@
 
         <div class="mt-4">
             <h2>Quick Actions</h2>
-            <a href="/admin/admin_blacklist.html" class="btn btn-danger">Manage Blacklist</a> <!-- Changed -->
-            <a href="/admin/admin_apikeys.html" class="btn btn-secondary">Configure API Keys</a> <!-- Changed -->
+            <a href="/admin/admin_blacklist.html" class="btn btn-danger">Manage URL Blacklist</a> <!-- Changed -->
+            <a href="/admin/admin_apikeys.html" class="btn btn-secondary">Manage External API Keys</a> <!-- Changed -->
         </div>
     </main>
 

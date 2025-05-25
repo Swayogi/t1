@@ -25,30 +25,35 @@
     </nav>
 
     <main class="container mt-5">
-        <h1>Scan History</h1>
+        <h1>Your Scan Activity Log</h1> <!-- Changed -->
         <div class="table-responsive mt-4">
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
                         <th>URL</th>
                         <th>Scan Date</th>
-                        <th>Malicious Status</th>
+                        <th>Threat Assessment</th> <!-- Changed -->
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody id="scanHistoryTableBody">
                     <!-- Scan history will be populated here by JavaScript -->
+                    <!-- Example Row (to be replaced by JS) -->
                     <tr>
                         <td>http://example-phish.com</td>
                         <td>2023-10-25 10:00 AM</td>
                         <td><span class="badge bg-danger">Malicious</span></td>
-                        <td><a href="/user/scan-detail.html?id=1" class="btn btn-primary btn-sm">View Details</a></td> <!-- Changed -->
+                        <td><a href="/user/scan-detail.html?id=1" class="btn btn-primary btn-sm">View Full Report</a></td> <!-- Changed -->
                     </tr>
                     <tr>
                         <td>http://example-clean.com</td>
                         <td>2023-10-24 02:30 PM</td>
                         <td><span class="badge bg-success">Safe</span></td>
-                        <td><a href="/user/scan-detail.html?id=2" class="btn btn-primary btn-sm">View Details</a></td> <!-- Changed -->
+                        <td><a href="/user/scan-detail.html?id=2" class="btn btn-primary btn-sm">View Full Report</a></td> <!-- Changed -->
+                    </tr>
+                    <!-- End Example Row -->
+                    <tr id="noScanHistoryRow" style="display:none;">
+                        <td colspan="4" class="text-center text-muted">Your scanned URLs and their threat assessments will appear here. No scans performed yet.</td>
                     </tr>
                 </tbody>
             </table>

@@ -24,17 +24,15 @@
     </nav>
 
     <main class="container mt-5">
-        <h1>Contact Us</h1>
-        <p class="lead">We'd love to hear from you! Whether you have a question about our services, need assistance, or just want to provide feedback, please feel free to reach out.</p>
+        <h1>Get In Touch</h1> <!-- Changed -->
+        <p class="lead">Have questions, feedback, or need to report a critical issue? We're here to help.</p> <!-- Changed -->
         
         <div class="row mt-4">
             <div class="col-md-6">
-                <h2>Our Office</h2>
-                <p>PhishNet Headquarters<br>
-                123 Cyber Security Lane<br>
-                Tech City, TC 54321</p>
-                <p><strong>Email:</strong> <a href="mailto:support@phishnet.example.com">support@phishnet.example.com</a></p>
-                <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                <h2>Contact Information</h2> <!-- Changed -->
+                <p><strong>General Inquiries:</strong><br><a href="mailto:support@phishnet.example.com">support@phishnet.example.com</a></p> <!-- Changed -->
+                <p><strong>Security Vulnerabilities:</strong><br><a href="mailto:security@phishnet.example.com">security@phishnet.example.com</a></p> <!-- Changed -->
+                <p class="mt-3"><em>We aim to respond to all inquiries within 24-48 business hours.</em></p> <!-- Added -->
             </div>
             <div class="col-md-6">
                 <h2>Send Us a Message</h2>
@@ -44,15 +42,15 @@
                         <input type="text" class="form-control" id="contactName" required>
                     </div>
                     <div class="mb-3">
-                        <label for="contactEmail" class="form-label">Your Email</label>
+                        <label for="contactEmail" class="form-label">Your Email Address</label> <!-- Changed -->
                         <input type="email" class="form-control" id="contactEmail" required>
                     </div>
                     <div class="mb-3">
                         <label for="contactSubject" class="form-label">Subject</label>
-                        <input type="text" class="form-control" id="contactSubject">
+                        <input type="text" class="form-control" id="contactSubject" required> <!-- Added required -->
                     </div>
                     <div class="mb-3">
-                        <label for="contactMessage" class="form-label">Message</label>
+                        <label for="contactMessage" class="form-label">Your Message</label> <!-- Changed -->
                         <textarea class="form-control" id="contactMessage" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>

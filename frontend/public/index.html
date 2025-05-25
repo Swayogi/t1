@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to PhishNet</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/theme.css"> <!-- Added theme.css link -->
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -14,40 +15,51 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li> <!-- Changed -->
-                    <li class="nav-item"><a class="nav-link" href="/user/scanner.html">URL Scanner</a></li> <!-- Changed -->
-                    <li class="nav-item"><a class="nav-link" href="/education/phishing-basics.html">Phishing Info</a></li> <!-- Changed -->
-                    <li class="nav-item"><a class="nav-link" href="/public/contact.html">Contact</a></li> <!-- Changed -->
-                    <li class="nav-item"><a class="nav-link" href="/auth/login.html">Login</a></li> <!-- Changed -->
-                    <li class="nav-item"><a class="nav-link" href="/auth/register.html">Register</a></li> <!-- Changed -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0"> <!-- Changed ms-auto to me-auto to push main links left -->
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="/user/scanner.html">URL Scanner</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="/education/phishing-basics.html">Phishing Info</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="/public/contact.html">Contact</a></li> 
+                </ul>
+                <ul class="navbar-nav ms-auto"> <!-- New ul for right-aligned items -->
+                    <li class="nav-item"><a class="nav-link" href="/auth/login.html">Login</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="/auth/register.html">Register</a></li> 
+                    <li class="nav-item">
+                        <button class="btn btn-outline-secondary btn-sm" id="themeToggle">
+                            Toggle Theme
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <main class="container mt-5">
-        <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="p-5 mb-4 bg-light rounded-3 text-center"> <!-- Added text-center -->
             <div class="container-fluid py-5">
-                <h1 class="display-5 fw-bold">Welcome to PhishNet</h1>
-                <p class="col-md-8 fs-4">Your trusted partner in identifying and reporting phishing URLs. Protect yourself and the community from online threats.</p>
-                <a class="btn btn-primary btn-lg" href="/auth/register.html" role="button">Get Started</a> <!-- Changed -->
-                <a class="btn btn-outline-secondary btn-lg" href="/user/scanner.html" role="button">Scan a URL</a> <!-- Changed -->
+                <h1 class="display-5 fw-bold">PhishNet: Your Shield Against Online Deception</h1> <!-- Changed -->
+                <p class="col-lg-8 mx-auto fs-4">Scan URLs, report suspicious sites, and learn how to protect yourself from phishing attacks.</p> <!-- Changed -->
+                <a class="btn btn-primary btn-lg mt-2" href="/auth/register.html" role="button">Register Now</a> <!-- Changed text -->
+                <a class="btn btn-success btn-lg mt-2" href="/auth/login.html" role="button">Login</a> <!-- Added Login -->
+                <a class="btn btn-info btn-lg mt-2" href="/education/phishing-basics.html" role="button">Learn More</a> <!-- Added Learn More -->
             </div>
         </div>
 
-        <div class="row align-items-md-stretch">
-            <div class="col-md-6">
-                <div class="h-100 p-5 text-bg-dark rounded-3">
-                    <h2>About Our Service</h2>
-                    <p>PhishNet uses advanced scanning technologies and community reports to detect malicious URLs. Our goal is to provide a safer internet experience for everyone.</p>
-                </div>
+        <div class="row text-center mt-5 mb-5"> <!-- New Features Section -->
+            <div class="col-lg-4">
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Advanced Scanning" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Advanced Scanning</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                <h2 class="fw-normal mt-3">Advanced URL Scanning</h2>
+                <p>Utilize our comprehensive scanning engine to detect malicious links from multiple sources, including real-time checks and threat intelligence feeds.</p>
             </div>
-            <div class="col-md-6">
-                <div class="h-100 p-5 bg-light border rounded-3">
-                    <h2>Stay Safe Online</h2>
-                    <p>Learn more about how to identify phishing attempts and protect your personal information. Knowledge is your best defense against cyber threats.</p>
-                </div>
+            <div class="col-lg-4">
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Community Reporting" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Community Reporting</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                <h2 class="fw-normal mt-3">Community Reporting</h2>
+                <p>Contribute to a safer internet by reporting suspicious URLs. Your reports help us identify new threats and protect the broader community.</p>
+            </div>
+            <div class="col-lg-4">
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Educational Resources" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Educational Resources</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                <h2 class="fw-normal mt-3">Educational Resources</h2>
+                <p>Equip yourself with the knowledge to identify and avoid phishing attempts. Our resources help you understand common tactics and best practices.</p>
             </div>
         </div>
     </main>
@@ -59,5 +71,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script src="../js/themeToggle.js" defer></script> <!-- Added themeToggle.js link -->
 </body>
 </html>

@@ -25,17 +25,20 @@
     </nav>
 
     <main class="container mt-5">
-        <h1>User Profile</h1>
+        <h1>Your Profile Settings</h1> <!-- Changed -->
         <div class="row mt-4">
             <div class="col-md-8 offset-md-2">
                 <form id="profileForm">
+                    <h4>Account Information</h4> <!-- Added -->
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="username" value="current_username" readonly>
+                        <input type="text" class="form-control" id="username" value="current_username" readonly aria-describedby="usernameHelp">
+                        <div id="usernameHelp" class="form-text">Your current username (cannot be changed).</div> <!-- Added -->
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="email" value="current_email@example.com" required>
+                        <input type="email" class="form-control" id="email" value="current_email@example.com" required aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">Your registered email address. You can update this if needed.</div> <!-- Added -->
                     </div>
                     <hr>
                     <h4>Change Password</h4>
@@ -55,7 +58,7 @@
                 </form>
                 <hr class="my-4">
                 <div class="text-center">
-                    <a href="/user/delete-account.html" class="btn btn-danger">Delete My Account</a> <!-- Changed -->
+                    <p class="mb-2">Looking to leave? <a href="/user/delete-account.html" class="btn btn-danger btn-sm">Delete your account</a></p> <!-- Changed text & style -->
                 </div>
             </div>
         </div>

@@ -25,30 +25,35 @@
     </nav>
 
     <main class="container mt-5">
-        <h1>My Submitted Reports</h1>
+        <h1>Your Submitted Threat Reports</h1> <!-- Changed -->
         <div class="table-responsive mt-4">
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>Reported URL</th>
+                        <th>URL You Reported</th> <!-- Changed -->
                         <th>Date Submitted</th>
-                        <th>Status</th>
+                        <th>Current Review Status</th> <!-- Changed -->
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody id="userReportsTableBody">
                     <!-- User reports will be populated here by JavaScript -->
+                    <!-- Example Row (to be replaced by JS) -->
                     <tr>
                         <td>http://suspicious-example.com/login</td>
                         <td>2023-10-20 09:15 AM</td>
                         <td><span class="badge bg-warning text-dark">Pending</span></td>
-                        <td><a href="/user/report-detail.html?id=3" class="btn btn-primary btn-sm">View Details</a></td> <!-- Changed -->
+                        <td><a href="/user/report-detail.html?id=3" class="btn btn-primary btn-sm">View Details</a></td> 
                     </tr>
                      <tr>
                         <td>http://another-bad-site.com/</td>
                         <td>2023-10-15 05:40 PM</td>
                         <td><span class="badge bg-success">Resolved</span></td>
-                        <td><a href="/user/report-detail.html?id=4" class="btn btn-primary btn-sm">View Details</a></td> <!-- Changed -->
+                        <td><a href="/user/report-detail.html?id=4" class="btn btn-primary btn-sm">View Details</a></td> 
+                    </tr>
+                    <!-- End Example Row -->
+                    <tr id="noUserReportsRow" style="display:none;">
+                        <td colspan="4" class="text-center text-muted">URLs you report as suspicious will be listed here. You haven't reported any URLs yet.</td>
                     </tr>
                 </tbody>
             </table>

@@ -1,0 +1,158 @@
+/* frontend/css/theme.css */
+
+/* Default Light Theme Variables */
+:root {
+  --body-bg: #ffffff; /* White background */
+  --body-color: #212529; /* Bootstrap's default body color (dark grey/black) */
+  --card-bg: #ffffff; /* Card background */
+  --card-border-color: rgba(0, 0, 0, 0.175); /* Bootstrap's card border color */
+  --navbar-bg: #f8f9fa; /* Light grey for navbar (Bootstrap's navbar-light bg-light) */
+  --navbar-color: rgba(0, 0, 0, 0.55); /* Navbar link color */
+  --navbar-brand-color: rgba(0, 0,0, .9); /* Navbar brand color */
+  --footer-bg: #f8f9fa;
+  --footer-color: #6c757d; /* Muted text color for footer */
+  --link-color: #0d6efd; /* Bootstrap's default link color */
+  --link-hover-color: #0a58ca;
+  --heading-color: #212529;
+  --input-bg: #ffffff;
+  --input-border-color: #ced4da;
+  --input-color: #212529;
+  --button-primary-bg: #0d6efd;
+  --button-primary-color: #ffffff;
+  --button-secondary-bg: #6c757d;
+  --button-secondary-color: #ffffff;
+
+  /* Specific PhishNet elements if needed */
+  --safe-color: #198754; /* Green for safe status */
+  --suspicious-color: #ffc107; /* Yellow for suspicious */
+  --dangerous-color: #dc3545; /* Red for dangerous */
+}
+
+/* Dark Theme Variables - Applied when body has .dark-mode class */
+body.dark-mode {
+  --body-bg: #1a1a1a; /* Darker grey, not quite black */
+  --body-color: #e0e0e0; /* Light grey text */
+  --card-bg: #2c2c2c; /* Darker card background */
+  --card-border-color: #444444; /* Lighter border for dark cards */
+  --navbar-bg: #212529; /* Bootstrap's dark navbar color */
+  --navbar-color: rgba(255, 255, 255, 0.55); /* Light navbar link color */
+  --navbar-brand-color: rgba(255,255,255,.9); /* Light navbar brand color */
+  --footer-bg: #212529;
+  --footer-color: #adb5bd; /* Lighter muted text for dark footer */
+  --link-color: #60a5fa; /* Lighter blue for links */
+  --link-hover-color: #93c5fd;
+  --heading-color: #f5f5f5; /* Very light grey for headings */
+  --input-bg: #2c2c2c;
+  --input-border-color: #555555;
+  --input-color: #e0e0e0;
+  --button-primary-bg: #3b82f6; /* A slightly brighter blue for dark mode */
+  --button-primary-color: #ffffff;
+  --button-secondary-bg: #4b5563; /* Darker grey for secondary buttons */
+  --button-secondary-color: #ffffff;
+  
+  /* Specific PhishNet elements in dark mode (colors might be fine as is, or adjust if needed) */
+  /* --safe-color: #22c55e; (example: slightly brighter green) */
+  /* --suspicious-color: #facc15; */
+  /* --dangerous-color: #f87171; */
+}
+
+/* Apply base styling using these variables */
+body {
+  background-color: var(--body-bg);
+  color: var(--body-color);
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+}
+
+a {
+  color: var(--link-color);
+}
+a:hover {
+  color: var(--link-hover-color);
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-color: var(--card-border-color);
+  /* color: var(--body-color); /* Cards will inherit body color by default */
+}
+
+.card-header {
+    /* Ensure card headers also use body color or specific card text color if defined */
+    color: var(--heading-color); 
+    background-color: rgba(var(--card-border-color), 0.03); /* Slight tint */
+    border-bottom: 1px solid var(--card-border-color);
+}
+
+
+.navbar.bg-light { /* Target Bootstrap's light navbar */
+  background-color: var(--navbar-bg) !important; /* Important to override Bootstrap */
+  /* Links inside this navbar are usually .nav-link */
+}
+.navbar.bg-light .navbar-brand {
+    color: var(--navbar-brand-color) !important;
+}
+.navbar.bg-light .nav-link {
+    color: var(--navbar-color) !important;
+}
+ .navbar.bg-light .nav-link:hover {
+    color: var(--navbar-brand-color) !important; /* Or a slightly different hover */
+}
+
+
+.navbar.bg-dark { /* Target Bootstrap's dark navbar */
+  background-color: var(--navbar-bg) !important; /* Should match dark mode navbar-bg */
+}
+/* If using .navbar-dark class with custom background, it handles text color automatically.
+   If we are setting navbar-bg directly, we also need to ensure text colors are correct.
+   The body.dark-mode .navbar.bg-light selector above will handle the default light navbar when dark mode is on.
+   For an explicitly .bg-dark navbar (like admin nav), its variables should already align with dark theme.
+*/
+body.dark-mode .navbar.bg-dark .navbar-brand {
+    color: var(--navbar-brand-color) !important;
+}
+body.dark-mode .navbar.bg-dark .nav-link {
+    color: var(--navbar-color) !important;
+}
+
+
+.footer { /* Assuming footer has class 'footer' */
+  background-color: var(--footer-bg);
+  color: var(--footer-color);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* Form inputs and buttons */
+.form-control {
+    background-color: var(--input-bg);
+    color: var(--input-color);
+    border-color: var(--input-border-color);
+}
+.form-control:focus {
+    background-color: var(--input-bg);
+    color: var(--input-color);
+    border-color: var(--link-color); /* Highlight with link color on focus */
+    box-shadow: 0 0 0 0.25rem rgba(var(--link-color), 0.25); /* Mimic Bootstrap focus */
+}
+
+.btn-primary {
+    background-color: var(--button-primary-bg);
+    border-color: var(--button-primary-bg);
+    color: var(--button-primary-color);
+}
+/* Add hover/active states for buttons if default Bootstrap ones don't play nice with CSS vars */
+
+.btn-secondary {
+    background-color: var(--button-secondary-bg);
+    border-color: var(--button-secondary-bg);
+    color: var(--button-secondary-color);
+}
+
+/* Status colors */
+.status-safe { color: var(--safe-color); }
+.status-suspicious { color: var(--suspicious-color); }
+.status-dangerous { color: var(--dangerous-color); }
